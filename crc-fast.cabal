@@ -20,11 +20,8 @@ Library
   Extensions:           ForeignFunctionInterface
   Build-Depends:        base                     >= 4         &&   < 5
                        ,bytestring               >= 0.10.4    &&   < 0.10.8
-                       ,classy-prelude           >= 0.5.6     &&   < 0.5.11
                        ,binary                   >=0.7.1.0    &&   < 0.7.2.0
                        ,hspec                    >= 1.7.2     &&   < 1.7.3
-                       ,safe                     >= 0.3.3     &&   < 0.4.3
-                       ,text                     >= 0.11.3.1  &&   < 0.11.3.3
                        ,transformers             >= 0.3.0.0
                                                     
   c-sources:           lib_crc/lib_crc.c

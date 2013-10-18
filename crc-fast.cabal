@@ -1,11 +1,11 @@
 Name:                   crc-fast
-Version:                0.0.0
+Version:                0.1.0
 Author:                 Scott Murphy<scottmurphy09@gmail.com>
 Maintainer:             Scott Murphy<scottmurphy09@gmail.com>
 License:                BSD3
 License-File:           LICENSE
 -- Synopsis:               
--- Description:            
+-- Description: A small CRC wrapper library for doing CRC calculations           
 Cabal-Version:          >= 1.2
 Build-Type:             Simple
 extra-source-files: 

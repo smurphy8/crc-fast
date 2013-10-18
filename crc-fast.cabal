@@ -1,0 +1,58 @@
+Name:                   crc-fast
+Version:                0.0.0
+Author:                 Scott Murphy<scottmurphy09@gmail.com>
+Maintainer:             Scott Murphy<scottmurphy09@gmail.com>
+License:                BSD3
+License-File:           LICENSE
+-- Synopsis:               
+-- Description:            
+Cabal-Version:          >= 1.2
+Build-Type:             Simple
+extra-source-files: 
+    lib_crc/lib_crc.h
+
+Library
+  Default-Language:     Haskell2010
+  HS-Source-Dirs:       src
+  GHC-Options:          -Wall
+  Exposed-Modules:      Foreign.CRC
+  Other-Modules:        Foreign.CRC.Internal
+  Extensions:           ForeignFunctionInterface
+  Build-Depends:        base                     >= 4         &&   < 5
+                       ,bytestring               >= 0.10.4    &&   < 0.10.8
+                       ,classy-prelude           >= 0.5.6     &&   < 0.5.11
+                       ,binary                   >=0.7.1.0    &&   < 0.7.2.0
+                       ,hspec                    >= 1.7.2     &&   < 1.7.3
+                       ,safe                     >= 0.3.3     &&   < 0.4.3
+                       ,text                     >= 0.11.3.1  &&   < 0.11.3.3
+                       ,transformers             >= 0.3.0.0
+                                                    
+  c-sources:           lib_crc/lib_crc.c
+  include-dirs:        lib_crc
+  includes:            lib_crc.h
+
+  
+Test-Suite spec
+  Type:                 exitcode-stdio-1.0
+  Default-Language:     Haskell2010
+  Hs-Source-Dirs:       test
+                        ,src
+  Ghc-Options:          -Wall -GCC
+  Main-Is:              Spec.hs
+  Build-Depends:        base
+                      , hspec
+
+
+Executable crc-fast
+    main-is:            Main.hs
+    HS-Source-Dirs:     src
+    build-depends:      base
+    c-sources:           lib_crc/lib_crc.c
+    include-dirs:        lib_crc
+    includes:            lib_crc.h
+                                          
+    ghc-options:      -threaded -O2 -rtsopts
+
+Source-Repository head
+  Type:                 git
+--  Location:             

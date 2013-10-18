@@ -1,0 +1,3 @@
+module Foreign.CRC where
+
+import Foreign.CRC.Internal
